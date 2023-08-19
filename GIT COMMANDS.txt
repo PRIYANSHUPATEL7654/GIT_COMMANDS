@@ -1,0 +1,198 @@
+OUR MACHINE --> STAGING SERVER --> LOCAL SERVER --> MAIN SERVER(REMOTE SERVER)
+A-added, U-untracked, M-modified, D-deleted
+
+			GIT COMMANDS
+
+1. git init 
+-->(to initialize a server at a particular location.)
+
+2. git add index.html
+-->(to add this file in staging server.)
+
+3. git add *.html
+-->(to add all html files in staging server.)
+
+4. git add .
+-->(to add all files in staging server.)
+
+5. git restore index.html
+-->(to restore the deleted index.html file from server.)
+
+6. git log 
+-->(to see all the changes done i.e.see whether a file is to be commited or still it is not added in the server.)
+
+7. git log --reverse
+-->(to see all the changes done in reverse order i.e.see whether a file is to be commited or still it is not added in the server.)
+
+8. git commit -m "comment"
+-->(to send the files from staging server to local server.)
+
+9. git status
+-->(to check what is or not committed in a current branch.)
+
+10. git show idname
+-->(to show whatever is done or committed by that id at whatsoever time.)
+
+11.git commit -am "comment"
+-->(to send the files directly to local server. It is only applicable if we are editing a file. It will not work if it is new file.)
+
+12.git rm index.html
+-->(to delete the file from staging server.Then commit that change.)
+
+13.changing file name normally , git add . , git commit -m "comment"
+-->(to change file name normally without git, then add changes to staging server, then commit the changing filename in local server or else it will show 2 files i.e.deleted 1st file with old name ane untracked 2nd file with new name.)    
+
+14.git mv index.html app.html
+-->(to change the filename using git and then commit the change.)
+
+15.git log --oneline 
+-->(to see all the commits in oneline,latest at the top.)
+
+16.git config --local -e 
+-->(this configuration will work only for the current project going on like changing the username.)
+
+17.git config --global -e 
+-->(this configuration will work only for the current user logged in.)
+
+18.git config --system -e 
+-->(this configuration will work on the system we are using.)
+
+19.git config --global alias.s "status" 
+-->(now we can use s instead of status. Now if we use 16th command then it will show alias i.e. s=status.)
+
+20.git diff index.html 
+-->(it will show the difference between the content stored in local server and in machine.)
+
+21.git diff --staged index.html
+-->(it will show the difference between the content stored in staging server and in machine.)
+
+22.git status -s 
+-->(it will show the status in short.)
+
+23.git commit 
+-->(to comment something longer for a particular commit ,if we use -m then we will be able to write only limited amount of comment.)
+
+24.git rm --cached index.html
+-->(to remove the file from staging server.)
+
+25.git log --reverse --oneline
+-->(to see all the commits in oneline,latest at the bottom.)
+
+26.git show HEAD
+-->(to see whatever is committed at last.)
+
+27.git show HEAD~2 
+-->(to see the 2 commits before the the last commit NOTE:we can give any number according to the number of commits we want to see .)
+
+28.git restore --staged index.html
+-->(to unstage the file i.e.undoing git add.)
+
+29.git restore index.html file.html
+-->(to restore multiple files from the server.)
+
+30.git restore
+-->(to discard all local changes except untracked files.)
+
+31.git clean -fd
+-->(to remove all untracked files.)
+
+32.git restore --source=HEAD~2 index.html 
+-->(to restore an earlier version of a file i.e.here it will restore the changes/content before the last 2 commits.) 
+
+33.git log --stat 
+-->(it will show the number of changes done by all like in how many files were changes done and how many lines were added or removed NOTE: if we write filename at the end then it will ahow for that specific file only.)
+
+34.git log --patch 
+-->(it will show the number of changes done by all including content which was added or removed NOTE: if we write filename at the end then it will ahow for that specific file only.)
+
+35.git log --oneline --all
+-->(it will show all the changes done till now.)
+
+36.git log --oneline --all -3 
+-->(it will show the last 3 commits done.)
+
+37.git log --author="author name"
+-->(it will show the commits done by a particular author.)
+
+38.git log --after="one week ago" , git log --before="yyyy-mm-dd"
+-->(it will show all the commits done after the last week i.e.commits in last week, it will show all the commits done before the specific date.)
+
+39.git log --grep="word"
+-->(it will show all the commits which has that word in it.)
+
+40.git log S"letter/word/sentence"
+-->(it will show all the commits in which the specific letter/word/sentence is used in code, we can verify it by using 10th command.)
+
+41.git log id...id
+-->(it will show the data between the commits of this two id's.)
+
+42.git log index.html
+-->(it will show all the commits done in the specific file.)
+
+43.git log --pretty=format:" "
+-->(google git pretty.)
+
+44.git config --global alias.psp "log --pretty=format:''" , git psp
+-->(to create a shortcut name for a specific command, here psp.)
+   
+
+45.git show HEAD:index.html
+-->(it will show the content of committed changes in a specific file.)
+
+46.git diff HEAD~2 HEAD
+-->(it will show the difference between the current ane two commits before the last commit i.e.last and 3rd last.)
+
+47.git diff HEAD~2 HEAD index.html
+-->(it will show the difference between the current ane two commits before the last commit i.e.last and 3rd last in a specific file.)
+
+48.git checkout idname 
+-->(it will show exactly what the content was at that specific id and after that the head will move to that id, it is not showed in history.)
+
+49.git bisect start
+-->(it will start the bisecting to find a bad commit.)
+
+50.git bisect good
+-->(it is used to tell the machine that the commit at the specific id where the head is at present is good.)
+
+51.git bisect bad 
+-->(it will use binary search algorithm and use divide and conquer method to find the bad commit and show the id containing bad commit.)
+
+52.git shortlog 
+-->(it will show what amount of work is done by a specific person.)
+
+53.git blame index.html 
+-->(it will show the author of each contnet inlcuding a single word in that file.)
+
+NOTE : DO TAGGING FROM VIDEO NAMED GIT DAY 4 ON DAY 5
+
+54.echo "content" >> index.html 
+-->(it will make a new file with the content written in it.)
+
+55.git remote add origin url_of_repository 
+-->(it says that whatever file is pushed from the machine will go to that url.)
+
+56.git push -u origin main 
+-->(it will push all the files in the main branch, it is done only once to deploy all files on server for the first time.)
+
+57.git push
+-->(it will push the code or the file to the main server and now anyone who has permission will be able to see the content in their machine.)
+
+58.git clone url_of_repository
+-->(it will show all the files of the repository in other machines now in which this command is run.)
+
+59.dir
+-->(after using 58th command if we write dir command then it will show the content in our machine.)
+
+60.code .
+-->(by using this command in cmd after going to the location where folder is saved, it will open the whole folder in vscode including all files.)
+
+NOTE : PERMISSION NEEDS TO BE GIVEN TO THE GITHUB ID's TO WRITE OR CHANGE SOMETHING IN THAT.
+
+61.git pull
+-->(it will show all the changes done in the repository and update in our machine too.)
+
+NOTE : WHEN GIT PULL IS NOT USED AND SOMETHING IS COMMITED BY US THEN WHILE PUSHING IT, IT WILL SHOW CONFLICT.
+- IF WE CHOOSE ACCEPT CURRENT CHANGES THEN IT WILL SAVE CHANGES DONE BY US AND REMOVE THE CHANGES DONE BY THE OTHER PERSON.
+- IF WE CHOOSE ACCEPT INCOMING CHANGES THEN IT WILL SAVE THE CHANGES DONE BY THE OTHER PERSON AND REMOVE THE CHANGES DONE BY US.
+- IF WE CHOOSE ACCEPT BOTH CHANGES THEN IT WILL SAVE THE CHANGES DONE BY BOTH, US AND THE OTHER PERSON.
+- WE CAN ALSO CHOOSE COMPARE CHANGES TO COMPARE OUR AND THE OTHER PERSON'S COMMIT.
